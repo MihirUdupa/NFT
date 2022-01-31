@@ -1,2 +1,2 @@
 # NFT
-A repo which contains the demo of the NFT-Frontend (UI) and the NFT-backend (DApp) 
+A full and simple NFT Dapp with both front-end and back-end
