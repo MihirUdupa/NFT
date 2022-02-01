@@ -4,10 +4,17 @@ import styles from "./style";
 
 const launch = () =>{
     return(
-        <View>
-            <Text style={styles.p}> the launch component works</Text>
-            <Image source={require('../../assets/Launch_icons.png')}/>
-        </View>
+        <>
+            <View>
+                <View style={styles.view}>
+                    <Text style={styles.p}>FIRST EV</Text>
+                    <Text style={styles.p}>NFT</Text>
+                </View>
+            </View>
+            <View style={styles.img}>
+                <Image source={require('../../assets/Launch_icons.png')} />
+            </View>
+        </>
     )
 }
 
