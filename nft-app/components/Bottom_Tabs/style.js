@@ -33,6 +33,9 @@ const styles= StyleSheet.create({
         borderWidth:2,
         borderColor:'#EEFFFF',
         left:1,
+    },
+    btn:{
+        top:50
     }
 });
 
