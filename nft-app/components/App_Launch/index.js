@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, Button } from "react-native";
+import { View, Text, Image, Button, TouchableOpacity } from "react-native";
 import styles from "./style";
 import { Div } from "reactnative-ui-bootstrap";
 
@@ -19,7 +19,9 @@ const launch = (props) => {
                 <Image source={require('../../assets/Launch_icons.png')} />
             </View>
             <View style={styles.btnComponent}>
-                <Button title="Proceed" color="#15f4ee" onPress={() => props.navigation.navigate("Login")}/>
+                <TouchableOpacity style={styles.button} onPress={() => props.navigation.navigate("Login")}>
+                    <Text style={styles.buttonText}>Proceed</Text>
+                </TouchableOpacity>
             </View>
         </View>
     )

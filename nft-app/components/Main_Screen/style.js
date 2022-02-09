@@ -6,7 +6,8 @@ const styles = StyleSheet.create({
     height:'100%'
   },
   subContainer:{
-    flexDirection:'row'
+    flexDirection:'row',
+    paddingBottom:5
   },
   menuBar:{
     top:10,
@@ -22,7 +23,9 @@ const styles = StyleSheet.create({
   },
   userImage:{
     height:42,
-    width:42
+    width:42,
+    borderRadius:42/2,
+    paddingLeft:5
   },
   image:{
     height:42,
@@ -46,24 +49,27 @@ const styles = StyleSheet.create({
     top:25,
   },
   buttonsSub:{
-    paddingLeft:100,
-    flexDirection:'row'
+    flexDirection:'row',
+    alignContent:"center",
+    alignItems:"center",
+    alignSelf:"center"
   },
   btns:{
     borderRadius:5,
     borderWidth:1,
-    borderColor:'#707070',
+    borderColor:'#505050',
     paddingLeft:20,
     paddingRight:20
   },
   buttonTextsSelected:{
-    color:'#EEFFFF'
+    color:'#EEFFFF',
+    fontWeight:"bold"
   },
   buttonTexts:{
-    color:'#808080'
+    color:'#C0C0C0'
   },
   btnText:{
-    fontSize:15
+    fontSize:20
   },
   body:{
     paddingLeft:60,
@@ -101,7 +107,7 @@ const styles = StyleSheet.create({
   batteryComponent:{
     top:40,
     backgroundColor:'#487840',
-    opacity:0.7,
+    opacity:0.9,
     borderRadius:15,
   },
   batteryHeaderBody:{
@@ -123,7 +129,7 @@ const styles = StyleSheet.create({
   nftComponent:{
     top:-40,
     backgroundColor:'#487840',
-    opacity:0.7,
+    opacity:0.9,
     borderRadius:15,
   },
   nftHeaderBody:{
@@ -154,7 +160,7 @@ const styles = StyleSheet.create({
   cCComponent:{
     top:-80,
     backgroundColor:'#487840',
-    opacity:0.7,
+    opacity:0.9,
     borderRadius:15,
   },
   cCHeaderBody:{

@@ -9,7 +9,7 @@ const battery = (props) =>{
         <View style={styles.container}>
           <View style={styles.subContainer}>
             <View style={styles.menuBar}>
-                <Ionicons name="menu" size={25} color="#25f4ee" />
+                <Ionicons name="menu" size={25} color="#15f4ee" />
               </View>
               <View style={styles.detailsText}>
                 <Text style={styles.headerText}>Jon Doe</Text>
@@ -35,7 +35,7 @@ const battery = (props) =>{
             </View>
           </View>
           {/* Battery Component */}
-          <View style={{paddingBottom:50}}>
+          <View style={{paddingBottom:40}}>
             <View style={styles.body}>
               <View style={styles.batteryComponent}>
                   <View style={styles.headerComponent}>

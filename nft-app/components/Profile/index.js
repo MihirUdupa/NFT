@@ -10,7 +10,7 @@ const profile = (props) =>{
         <View style={styles.component}>
             <View style={styles.header}>
                 <View style={styles.burgerMenu}>
-                    <Ionicons name="menu" size={25} color="#25f4ee" />
+                    <Ionicons name="menu" size={25} color="#15f4ee" />
                 </View>
                 <View style={styles.logo}>
                     <Image style={styles.img} source={require('../../assets/EV_NFT_Video.gif')}/>
@@ -28,31 +28,31 @@ const profile = (props) =>{
                     <TouchableOpacity >
                         <Text style={styles.itemText}>Account Info&nbsp;</Text>
                     </TouchableOpacity>
-                    <AntDesign name="caretright" size={25} color="#25f4ee" />
+                    <AntDesign name="caretright" size={25} color="#15f4ee" />
                 </View>
                 <View style={styles.line}/>
                 <View style={styles.menuBoxItem1}>
-                    <Ionicons name="card" size={25} color="#25f4ee" />
+                    <Ionicons name="card" size={25} color="#15f4ee" />
                     <TouchableOpacity >
                         <Text style={styles.itemText}>Carbon Credit</Text>
                     </TouchableOpacity>
-                    <AntDesign name="caretright" size={25} color="#25f4ee" />
+                    <AntDesign name="caretright" size={25} color="#15f4ee" />
                 </View>
                 <View style={styles.line}/>
                 <View style={styles.menuBoxItem1}>
-                    <Ionicons name="cart" size={25} color="#25f4ee" />
+                    <Ionicons name="cart" size={25} color="#15f4ee" />
                     <TouchableOpacity >
                         <Text style={styles.itemText}>EV Purchases</Text>
                     </TouchableOpacity>
-                    <AntDesign name="caretright" size={25} color="#25f4ee" />
+                    <AntDesign name="caretright" size={25} color="#15f4ee" />
                 </View>
                 <View style={styles.line}/>
                 <View style={styles.menuBoxItem1}>
-                    <Ionicons name="help" size={25} color="#25f4ee" />
+                    <Ionicons name="help" size={25} color="#15f4ee" />
                     <TouchableOpacity >
                         <Text style={styles.itemText1}>FAQ</Text>
                     </TouchableOpacity>
-                    <AntDesign name="caretright" size={25} color="#25f4ee" />
+                    <AntDesign name="caretright" size={25} color="#15f4ee" />
                 </View>
             </View>
             <View style={{paddingBottom:125}}></View>

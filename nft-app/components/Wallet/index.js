@@ -10,18 +10,20 @@ const wallet = (props) =>{
         <View style={styles.background}>
             <View style={styles.header}>
                 <View style={styles.burgerMenu}>
-                    <Ionicons name="menu" size={25} color="#25f4ee" />
+                    <Ionicons name="menu" size={25} color="#15f4ee" />
                 </View>
                 <View style={styles.logo}>
                     <Image style={styles.img} source={require('../../assets/EV_NFT_Video.gif')}/>
                 </View>
             </View>
             <View style={styles.address}>
-                <Text style={styles.addressText}>0x00000000000000000000</Text>
+                <Text style={styles.addressText}>0x390c4Fbc1Cb86e6F1670Eea9EC26D49A69C19eAD</Text>
             </View>
             <View style={styles.balance}>
-                <Text style={styles.balanceText}>Total Balance</Text>
-                <Text style={styles.balanceText}>$0.00</Text>
+                <View style={styles.balance1}>
+                    <Text style={styles.balanceText}>Total Balance</Text>
+                    <Text style={styles.balanceText}>$0.00</Text>
+                </View>
             </View>
             <View style={styles.menuBoxHeader}>
                 <Text style={styles.balanceText}>Attach Wallet</Text>
@@ -37,21 +39,23 @@ const wallet = (props) =>{
                     <View style={styles.Row}>
                         <Image style={styles.menuImage} source={require('../../assets/wallet-g7a47c6c66_1280.png')}></Image>                       
                         <Text style={styles.menuText}>Other Wallets</Text>                       
-                        <AntDesign name="caretright" size={25} color="#25f4ee" />
+                        <AntDesign style={styles.sideIcons} name="caretright" size={25} color="#15f4ee" />
                     </View>                
                 </View>
                 <View style={styles.thirdRow}> 
                     <View style={styles.Row}>
-                        <Ionicons name="link" size={25} color="#15f4ee"/>                       
+                        <Ionicons style={styles.startIcon} name="link" size={25} color="#15f4ee"/>                       
                         <Text style={styles.menuText}>Enter Ethereum Address</Text>                        
-                        <AntDesign name="caretright" size={25} color="#25f4ee" />
+                        <AntDesign style={styles.endIcons} name="caretright" size={25} color="#15f4ee" />
                     </View>                                          
                 </View>
             </View>
-            <View style={styles.btn}>
-                <Button title={'Transfer NFT'} color={'#15f4ee'}></Button>
+            <View style={styles.btnComponent}>
+                <TouchableOpacity style={styles.button}>
+                    <Text style={styles.buttonText}>Transfer NFT</Text>
+                </TouchableOpacity>
             </View>
-            <View style={{paddingBottom:150}}></View>
+            <View style={{paddingBottom:70}}></View>
             {/* tabs */}
             <Tabs 
             onPress1={() => props.navigation.navigate("Profile")}
