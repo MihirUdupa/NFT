@@ -27,7 +27,7 @@ const login = (props) =>{
                         </View>
                     </View>
                     <View style={styles.btnComponent}>
-                        <Button title="Login" color="#15f4ee" onPress={() => props.navigation.navigate("BatterScreen")}></Button>
+                        <Button title="Login" color="#15f4ee" onPress={() => props.navigation.navigate("Battery")}></Button>
                     </View>
                 </View>
             </View>
