@@ -3,9 +3,11 @@ import { View, Text, Button, TouchableOpacity } from "react-native";
 import styles from "./style";
 import { Div } from "reactnative-ui-bootstrap";
 import { Ionicons } from '@expo/vector-icons'; 
-import wallet from "../Wallet";
 
 const tabs = (props) => {
+    const onPress1 = props.onPress1;
+    const onPress2 = props.onPress2;
+    const onPress3 = props.onPress3;
     return (
         <View style={styles.component}>
             <View style={styles.bottomTabsComponent}>
@@ -15,7 +17,7 @@ const tabs = (props) => {
                             <Div className={'col-3 align-items-center'}>
                                 <Div className={'col-4 align-items-center'}>
                                     <TouchableOpacity style={styles.circleClass}>
-                                        <Ionicons name="home" size={24} color="#15f4ee"/>
+                                        <Ionicons name="home" size={24} color="#15f4ee" onPress={() => onPress3()}/>
                                     </TouchableOpacity>
                                 </Div>
                                 <Div className="align-items-center">
@@ -25,7 +27,7 @@ const tabs = (props) => {
                             <Div className={'col-3 align-items-center'}>
                                 <Div className={'col-4 align-items-center'}>
                                     <TouchableOpacity style={styles.circleClassHighlited}>
-                                        <Ionicons name="person" size={24} color="#EEFFFF"/>
+                                        <Ionicons name="person" size={24} color="#EEFFFF" onPress={() => onPress1()}/>
                                     </TouchableOpacity>
                                 </Div>
                                 <Div className="align-items-center">
@@ -35,7 +37,7 @@ const tabs = (props) => {
                             <Div className={'col-3 align-items-center'}>
                                 <Div className={'col-4 align-items-center'}>
                                     <TouchableOpacity style={styles.circleClass} >
-                                        <Ionicons name="wallet" size={24} color="#15f4ee" onPress={() => Component={wallet}}/>
+                                        <Ionicons name="wallet" size={24} color="#15f4ee" onPress={() => onPress2()}/>
                                     </TouchableOpacity>
                                 </Div>
                                 <Div className="align-items-center">
