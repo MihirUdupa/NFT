@@ -8,8 +8,9 @@ import LoginScreen from './components/Login/index';
 import ProfileScreen from './components/Profile/index';
 import wallet from './components/Wallet/index';
 import Btabs from './components/Bottom_Tabs/index';
-import BatteryScreen from './components/Home/index';
-import chargers from './components/Home/charger';
+import BatteryScreen from './components/Main_Screen/index';
+import chargers from './components/Main_Screen/charger';
+import home from './components/Home'
 
 
 import { StatusBar } from 'expo-status-bar';
@@ -22,6 +23,7 @@ const AppNavigator = createStackNavigator(
     Profile:ProfileScreen,
     Accounts:wallet,
     Battery:BatteryScreen,
+    Home:home,
     ChargerScreen:chargers,
   },
   {

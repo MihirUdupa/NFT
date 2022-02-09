@@ -3,7 +3,8 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     background:{
         top:0,
-        backgroundColor:'#151F28'
+        backgroundColor:'#151F28',
+        height:'100%'
     },
     logo:{
         height:200,

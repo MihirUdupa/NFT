@@ -51,6 +51,7 @@ const wallet = (props) =>{
             <View style={styles.btn}>
                 <Button title={'Transfer NFT'} color={'#15f4ee'}></Button>
             </View>
+            <View style={{paddingBottom:150}}></View>
             {/* tabs */}
             <Tabs 
             onPress1={() => props.navigation.navigate("Profile")}

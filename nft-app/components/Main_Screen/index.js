@@ -1,9 +1,10 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import styles from './style';
 import { Ionicons } from '@expo/vector-icons';
+import Tabs from '../Bottom_Tabs'
 
-const charger = (props) =>{
+const battery = (props) =>{
     return(
         <View style={styles.container}>
           <View style={styles.subContainer}>
@@ -25,25 +26,25 @@ const charger = (props) =>{
           </View>
           <View style={styles.buttonsMain}>
             <View style={styles.buttonsSub}>
-              <TouchableOpacity style={styles.btns} onPress={() => props.navigation.navigate('Battery')}>
-                <Text style={[styles.buttonTexts, styles.btnText]}>Battery</Text>
-              </TouchableOpacity>
               <TouchableOpacity style={styles.btns}>
-                <Text style={[styles.buttonTextsSelected, styles.btnText]}>Charger</Text>
+                <Text style={[styles.buttonTextsSelected, styles.btnText]}>Battery</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.btns} onPress={() => props.navigation.navigate('ChargerScreen')}>
+                <Text style={[styles.buttonTexts, styles.btnText]}>Charger</Text>
               </TouchableOpacity>
             </View>
           </View>
           {/* Battery Component */}
-          <View>
+          <View style={{paddingBottom:50}}>
             <View style={styles.body}>
               <View style={styles.batteryComponent}>
                   <View style={styles.headerComponent}>
                     <View style={styles.imgComponent}>
                       <View style={styles.imgBackgroundComponent}>
-                        <Image style={styles.img} source={require('../../assets/electric-station.png')}></Image>
+                        <Image style={styles.img} source={require('../../assets/battery1.png')}></Image>
                       </View>
                     </View>
-                    <Text style={styles.batteryHeaderBody}>Charger Purchased</Text>
+                    <Text style={styles.batteryHeaderBody}>Battery Purchased</Text>
                   </View>
                   {/* <View style={styles.hrLine}/> */}
                   <View style={styles.bodyComponent}>
@@ -122,8 +123,12 @@ const charger = (props) =>{
               </View>
             </View>
           </View>
+          <Tabs style={styles.bottomTabs}
+                onPress1={() => props.navigation.navigate("Profile")} 
+                onPress2={() => props.navigation.navigate("Accounts")}
+          />
       </View>
     );
 }
 
-export default charger;
+export default battery;

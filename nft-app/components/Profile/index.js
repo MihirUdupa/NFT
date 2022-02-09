@@ -55,11 +55,12 @@ const profile = (props) =>{
                     <AntDesign name="caretright" size={25} color="#25f4ee" />
                 </View>
             </View>
+            <View style={{paddingBottom:125}}></View>
             {/* tabs */}
-        <Tabs 
-        onPress3={() => props.navigation.navigate("Battery")} 
-        onPress2={() => props.navigation.navigate("Accounts")}
-        />
+            <Tabs 
+            onPress3={() => props.navigation.navigate("Battery")} 
+            onPress2={() => props.navigation.navigate("Accounts")}
+            />
         </View>
     )
 }

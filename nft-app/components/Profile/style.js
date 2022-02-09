@@ -68,7 +68,8 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
     },
     component:{
-        backgroundColor:'#151F28'
+        backgroundColor:'#151F28',
+        height:'100%',
     }
 });
 

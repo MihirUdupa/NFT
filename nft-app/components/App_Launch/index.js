@@ -19,9 +19,7 @@ const launch = (props) => {
                 <Image source={require('../../assets/Launch_icons.png')} />
             </View>
             <View style={styles.btnComponent}>
-            <Button title="Proceed" color="#15f4ee" onPress={() =>
-          props.navigation.navigate("Login")
-        }/>
+                <Button title="Proceed" color="#15f4ee" onPress={() => props.navigation.navigate("Login")}/>
             </View>
         </View>
     )

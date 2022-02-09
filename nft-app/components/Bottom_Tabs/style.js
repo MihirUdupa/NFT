@@ -4,9 +4,8 @@ const styles= StyleSheet.create({
     bottomTabsComponent:{
         alignItems:"center",
         alignContent:"center",
-        paddingTop:125,
         opacity:0.5,
-        position:"relative",
+        position:"absolute",
     },
     otherTabs:{
         color:'#15f4ee'

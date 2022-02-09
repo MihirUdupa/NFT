@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 const login = (props) =>{
     return(
-        <>
+        <View style={styles.body}>
             <View style={styles.component}>
                 <View style={styles.logo}>
                     <Image style={styles.img} source={require('../../assets/EV_NFT_Video.gif')}/>
@@ -34,7 +34,7 @@ const login = (props) =>{
             <View style={styles.img1}>
                 <Image source={require('../../assets/Launch_icons.png')} />
             </View>
-        </>
+        </View>
     )
 }
 
