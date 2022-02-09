@@ -68,48 +68,45 @@ const styles = StyleSheet.create({
     paddingLeft:60,
     paddingRight:60,
   },
+  headerComponent:{
+    flexDirection:'row'
+  },
+  imgBackgroundComponent:{
+    backgroundColor:'#487840',
+    opacity:0.9,
+    borderRadius:10
+  },
+  imgComponent:{
+    paddingTop:15,
+    paddingLeft:15,
+    paddingBottom:15
+  },
+  img:{
+    width:64,
+    height:64
+  },
+  bodyDirection:{
+    flexDirection:'row'
+  },
+  bodyText:{
+    color:'#15f4ee',
+    fontSize:12
+  },
+  bodyComponent:{
+    paddingLeft:90,
+    marginTop:-60,
+    marginBottom:25
+  },
   batteryComponent:{
     top:40,
     backgroundColor:'#487840',
     opacity:0.7,
     borderRadius:15,
   },
-  batteryPurchaseComponent:{
-    alignItems:"center",
-    flexDirection:'row',
-  },
-  batteryBody:{
-    flexDirection:'row'
-  },
-  purchaseText:{
+  batteryHeaderBody:{
     color:'#15f4ee',
-    top:-30,
+    top:10,
     paddingLeft:20
-  },
-  batteryImage:{
-    paddingTop:15,
-    paddingLeft:15,
-    paddingBottom:15
-  },
-  imageBattery:{
-    height:64,
-    width:64,
-    paddingLeft:5,
-  },
-  batteryBackground:{
-    backgroundColor:'#487840',
-    opacity:0.9,
-    borderRadius:10
-  },
-  otherBatteryDetails:{
-    marginTop:-40,
-    color:'#15f4ee',
-    paddingLeft:90,
-    bottom:20
-  },
-  batteryText:{
-    color:'#15f4ee',
-    fontSize:12
   },
   rightArrow1:{
     left:300,
@@ -128,23 +125,6 @@ const styles = StyleSheet.create({
     opacity:0.7,
     borderRadius:15,
   },
-  nftHeaderComponent:{
-    flexDirection:'row'
-  },
-  nftImageBackgroundComponent:{
-    backgroundColor:'#487840',
-    opacity:0.9,
-    borderRadius:10
-  },
-  nftImageComponent:{
-    paddingTop:15,
-    paddingLeft:15,
-    paddingBottom:15
-  },
-  nftImage:{
-    width:64,
-    height:64
-  },
   nftHeaderBody:{
     color:'#15f4ee',
     top:10,
@@ -154,13 +134,6 @@ const styles = StyleSheet.create({
     paddingLeft:90,
     marginTop:-60,
     marginBottom:25
-  },
-  nftBody:{
-    flexDirection:'row'
-  },
-  nftBodyText:{
-    color:'#15f4ee',
-    fontSize:12
   },
   leftArrow1:{
     top:-60,
@@ -176,7 +149,24 @@ const styles = StyleSheet.create({
   leftArrow2:{
     left:32,
     top:-30
+  },
+  cCComponent:{
+    top:-80,
+    backgroundColor:'#487840',
+    opacity:0.7,
+    borderRadius:15,
+  },
+  cCHeaderBody:{
+    color:'#15f4ee',
+    top:10,
+    paddingLeft:30
+  },
+  cCBodyComponent:{
+    paddingLeft:90,
+    marginTop:-60,
+    marginBottom:25
   }
+
 })
 
 export default styles

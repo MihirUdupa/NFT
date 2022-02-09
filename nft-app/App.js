@@ -22,7 +22,7 @@ const AppNavigator = createStackNavigator(
     Profile:ProfileScreen,
     Accounts:wallet,
     Battery:BatteryScreen,
-    // ChargerScreen:chargers,
+    ChargerScreen:chargers,
   },
   {
     defaultNavigationOptions:{

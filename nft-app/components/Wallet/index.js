@@ -3,7 +3,7 @@ import { Text, View, Image, Button, TouchableOpacity } from "react-native";
 import styles from "./style";
 import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons'; 
-import { Div } from "reactnative-ui-bootstrap";
+import Tabs from "../Bottom_Tabs";
 
 const wallet = (props) =>{
     return(
@@ -52,56 +52,10 @@ const wallet = (props) =>{
                 <Button title={'Transfer NFT'} color={'#15f4ee'}></Button>
             </View>
             {/* tabs */}
-            <View style={styles.component}>
-                <View style={styles.bottomTabsComponent}>
-                    <View style={styles.emptyComponent}>
-                        <View style={styles.spacing}>
-                            <Div className = {'row'}>
-                                <Div className={'col-3 align-items-center'}>
-                                    <Div className={'col-4 align-items-center'}>
-                                        <TouchableOpacity style={styles.circleClass}>
-                                            <Ionicons name="home" size={24} color="#15f4ee"/>
-                                        </TouchableOpacity>
-                                    </Div>
-                                    <Div className="align-items-center">
-                                        <Text style={styles.otherTabs}>Home</Text>
-                                    </Div>
-                                </Div>
-                                <Div className={'col-3 align-items-center'}>
-                                    <Div className={'col-4 align-items-center'}>
-                                        <TouchableOpacity style={styles.circleClassHighlited}>
-                                            <Ionicons name="person" size={24} color="#EEFFFF"/>
-                                        </TouchableOpacity>
-                                    </Div>
-                                    <Div className="align-items-center">
-                                        <Text style={styles.highlitedTabs}>Profile</Text>
-                                    </Div>
-                                </Div>
-                                <Div className={'col-3 align-items-center'}>
-                                    <Div className={'col-4 align-items-center'}>
-                                        <TouchableOpacity style={styles.circleClass} onPress={() => props.navigation.navigate('Accounts')} >
-                                            <Ionicons name="wallet" size={24} color="#15f4ee"/>
-                                        </TouchableOpacity>
-                                    </Div>
-                                    <Div className="align-items-center">
-                                        <Text style={styles.otherTabs}>Wallet</Text>
-                                    </Div>
-                                </Div>
-                                <Div className={'col-3 align-items-center'}>
-                                    <Div className={'col-4 align-items-center'}>
-                                        <TouchableOpacity style={styles.circleClass}>
-                                            <Ionicons name="information-circle-outline" size={24} color="#15f4ee"/>
-                                        </TouchableOpacity>
-                                    </Div>
-                                    <Div className="align-items-center">
-                                        <Text style={styles.otherTabs}>Other Info</Text>
-                                    </Div>
-                                </Div>
-                            </Div>
-                        </View>
-                    </View>
-                </View>
-            </View>
+            <Tabs 
+            onPress1={() => props.navigation.navigate("Profile")}
+            onPress3={() => props.navigation.navigate("Battery")}
+            />
         </View>
     );
 }
