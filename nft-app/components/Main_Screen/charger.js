@@ -2,13 +2,14 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import styles from './style';
 import { Ionicons } from '@expo/vector-icons';
+import Tabs from '../Bottom_Tabs';
 
 const charger = (props) =>{
     return(
         <View style={styles.container}>
           <View style={styles.subContainer}>
             <View style={styles.menuBar}>
-                <Ionicons name="menu" size={25} color="#25f4ee" />
+                <Ionicons name="menu" size={25} color="#15f4ee" />
               </View>
               <View style={styles.detailsText}>
                 <Text style={styles.headerText}>Jon Doe</Text>
@@ -33,8 +34,8 @@ const charger = (props) =>{
               </TouchableOpacity>
             </View>
           </View>
-          {/* Battery Component */}
-          <View>
+          {/* Charger Component */}
+          <View style={{paddingBottom:40}}>
             <View style={styles.body}>
               <View style={styles.batteryComponent}>
                   <View style={styles.headerComponent}>
@@ -122,6 +123,10 @@ const charger = (props) =>{
               </View>
             </View>
           </View>
+          <Tabs style={styles.bottomTabs}
+                onPress1={() => props.navigation.navigate("Profile")} 
+                onPress2={() => props.navigation.navigate("Accounts")}
+          />
       </View>
     );
 }

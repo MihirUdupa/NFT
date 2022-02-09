@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     },
     menuBox:{
         backgroundColor:'#487840',
-        opacity:0.5,
+        opacity:0.9,
         alignItems:"center",
         width:'100%',
         borderRadius:25,
@@ -68,7 +68,8 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
     },
     component:{
-        backgroundColor:'#151F28'
+        backgroundColor:'#151F28',
+        height:'100%',
     }
 });
 

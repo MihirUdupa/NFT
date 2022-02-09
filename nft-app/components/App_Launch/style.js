@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     p:{
-        top:80,
+        top:40,
         color:'#15f4ee',
         alignItems: 'center',
         justifyContent: 'center',
@@ -17,10 +17,9 @@ const styles = StyleSheet.create({
         textShadowRadius: 15,
     },
     img:{
-        width:'175%',
-        paddingTop:350,
+        paddingTop:285,
         position:"absolute",
-        paddingLeft: 0,
+        left:-100
     },
     logo:{
         width:200,
@@ -31,11 +30,27 @@ const styles = StyleSheet.create({
         height:200,
     },
     btnComponent:{
-        paddingTop:360,
-        padding:10,
+        paddingTop:340,
+        alignContent:"center",
+        alignSelf:"center",
+        alignItems:"center"
+    },
+    button:{
+        backgroundColor:'#15f4ee',
+        width:200,
+        borderRadius:15
+    },
+    buttonText:{
+        textAlign:"center",
+        alignContent:"center",
+        alignItems:"center",
+        paddingTop:10,
+        paddingBottom:10,
+        fontSize:20
     },
     background:{
-        backgroundColor:'#151F28'
+        backgroundColor:'#151F28',
+        height:'100%'
     }
 })
 

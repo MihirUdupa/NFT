@@ -1,27 +1,23 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    component:{
-        top:0,
-        backgroundColor:'#151F28'
-    },
     logo:{
         height:200,
         width:200,
         left:80,
-        position:"relative"
     },
     img:{
         height:200,
         width:200,
         left:80,
-        position:"relative"
     },
     img1:{
-        // top:-50,
-        backgroundColor:'#151F28'
+        top:430,
+        position:"absolute",
+        left:-100
     },
     introComponent:{
+        paddingTop:0,
         alignContent:"center",
         alignSelf:"center"
     },
@@ -30,7 +26,6 @@ const styles = StyleSheet.create({
         fontSize:45,
         textAlign:"center",
         alignContent:"center",
-        paddingBottom:15
     },
     subTitle:{
         color:'#15f4ee',
@@ -64,8 +59,28 @@ const styles = StyleSheet.create({
     btnComponent:{
         paddingTop:25,
         color:'#101010',
-        width:225
+        width:225,
+        alignContent:"center",
+        alignSelf:"center",
+        alignItems:"center"
     },
+    button:{
+        backgroundColor:'#15f4ee',
+        width:200,
+        borderRadius:15
+    },
+    buttonText:{
+        textAlign:"center",
+        alignContent:"center",
+        alignItems:"center",
+        paddingTop:10,
+        paddingBottom:10,
+        fontSize:20
+    },
+    body:{
+        height:'100%',
+        backgroundColor:'#151F28'
+    }
 });
 
 export default styles
