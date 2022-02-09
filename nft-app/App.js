@@ -8,7 +8,7 @@ import LoginScreen from './components/Login/index';
 import ProfileScreen from './components/Profile/index';
 import wallet from './components/Wallet/index';
 import Btabs from './components/Bottom_Tabs/index';
-import battery from './components/Home/index';
+import BatteryScreen from './components/Home/index';
 import chargers from './components/Home/charger';
 
 
@@ -21,7 +21,7 @@ const AppNavigator = createStackNavigator(
     BottomTabs:Btabs,
     Profile:ProfileScreen,
     Accounts:wallet,
-    BatterScreen:battery,
+    Battery:BatteryScreen,
     // ChargerScreen:chargers,
   },
   {
