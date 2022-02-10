@@ -17,7 +17,7 @@ import { StatusBar } from 'expo-status-bar';
 
 const AppNavigator = createStackNavigator(
   {
-    Launch:LaunchScreen,
+    NFT_App:LaunchScreen,
     Login:LoginScreen,
     BottomTabs:Btabs,
     Profile:ProfileScreen,
@@ -32,6 +32,8 @@ const AppNavigator = createStackNavigator(
         backgroundColor:"#151F28",
       },
       headerTintColor:"#FFF",
+      headerTitleAlign:"center",
+      animationTypeForReplace:"push",
     },
   }
 );
