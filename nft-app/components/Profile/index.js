@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Image, Button, TouchableOpacity } from "react-native";
+import { View, Text, Image, Button, TouchableOpacity,ScrollView } from "react-native";
 import styles from "./style";
 import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons'; 
@@ -7,6 +7,7 @@ import Tabs from "../Bottom_Tabs";
 
 const profile = (props) =>{
     return(
+        <ScrollView>
         <View style={styles.component}>
             <View style={styles.header}>
                 <View style={styles.burgerMenu}>
@@ -22,15 +23,20 @@ const profile = (props) =>{
                 </View>
                 <Text style={styles.userName}>Jon Doe</Text>
             </View>
-            <View style={styles.menuBox}>
+            <View style={styles.menuBox}
+            >
+            <View style={styles.item}>
                 <View style={styles.menuBoxItem1}>
                     <Ionicons name="information-circle-outline" size={25} color="#15f4ee" />
-                    <TouchableOpacity >
+                    <TouchableOpacity>
                         <Text style={styles.itemText}>Account Info&nbsp;</Text>
                     </TouchableOpacity>
                     <AntDesign name="caretright" size={25} color="#15f4ee" />
                 </View>
+                
                 <View style={styles.line}/>
+                </View>
+                <View style={styles.item}>
                 <View style={styles.menuBoxItem1}>
                     <Ionicons name="card" size={25} color="#15f4ee" />
                     <TouchableOpacity >
@@ -39,6 +45,8 @@ const profile = (props) =>{
                     <AntDesign name="caretright" size={25} color="#15f4ee" />
                 </View>
                 <View style={styles.line}/>
+                </View>
+                <View style={styles.item}>
                 <View style={styles.menuBoxItem1}>
                     <Ionicons name="cart" size={25} color="#15f4ee" />
                     <TouchableOpacity >
@@ -47,21 +55,26 @@ const profile = (props) =>{
                     <AntDesign name="caretright" size={25} color="#15f4ee" />
                 </View>
                 <View style={styles.line}/>
+                </View><View style={styles.item}>
                 <View style={styles.menuBoxItem1}>
                     <Ionicons name="help" size={25} color="#15f4ee" />
                     <TouchableOpacity >
                         <Text style={styles.itemText1}>FAQ</Text>
                     </TouchableOpacity>
                     <AntDesign name="caretright" size={25} color="#15f4ee" />
-                </View>
+                </View></View>
             </View>
-            <View style={{paddingBottom:125}}></View>
+            <View style={{paddingBottom:135,top:80}}>
             {/* tabs */}
             <Tabs 
+            onPress4={() => props.navigation.navigate("infopage")}
             onPress3={() => props.navigation.navigate("Battery")} 
             onPress2={() => props.navigation.navigate("Accounts")}
+            
             />
+            </View>
         </View>
+        </ScrollView>
     )
 }
 

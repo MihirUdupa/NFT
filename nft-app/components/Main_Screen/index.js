@@ -6,6 +6,7 @@ import Tabs from '../Bottom_Tabs'
 
 const battery = (props) =>{
     return(
+      <ScrollView>
         <View style={styles.container}>
           <View style={styles.subContainer}>
             <View style={styles.menuBar}>
@@ -35,6 +36,7 @@ const battery = (props) =>{
             </View>
           </View>
           {/* Battery Component */}
+          
           <View style={{paddingBottom:40}}>
             <View style={styles.body}>
               <View style={styles.batteryComponent}>
@@ -123,11 +125,14 @@ const battery = (props) =>{
               </View>
             </View>
           </View>
+         
           <Tabs style={styles.bottomTabs}
                 onPress1={() => props.navigation.navigate("Profile")} 
                 onPress2={() => props.navigation.navigate("Accounts")}
           />
+          
       </View>
+      </ScrollView>
     );
 }
 

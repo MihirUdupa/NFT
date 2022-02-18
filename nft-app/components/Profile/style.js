@@ -8,6 +8,15 @@ const styles = StyleSheet.create({
         alignContent:"space-between",
         borderRadius: 200/2,
     },
+    item:{
+        borderBottomWidth:1,
+        color:'black',
+        width:350,
+        alignItems:"center",
+        color:'lightgrey',
+        padding:10
+    },
+
     img:{
         height:200,
         width:200,
@@ -50,18 +59,23 @@ const styles = StyleSheet.create({
     menuBoxItem1:{
         opacity:1,
         flexDirection:"row",
+    
+       
+        
     },
     itemText:{
         color:'#15f4ee',
         fontSize:25,
         paddingRight:15,
-        paddingLeft:15,        
+        paddingLeft:15,
+                
     },
     itemText1:{
         color:'#15f4ee',
         fontSize:25,
-        paddingRight:58,
+        paddingRight:85,
         paddingLeft:58,
+        
     },
     line:{
         borderBottomColor: '#000000',

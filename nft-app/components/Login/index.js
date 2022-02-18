@@ -1,8 +1,8 @@
 import React from "react";
-import { View, Text, TextInput, Image, TouchableOpacity } from "react-native";
+import { View, Text, TextInput,Dimensions, Image,TouchableOpacity } from "react-native";
 import styles from "./style";
 import { Ionicons } from '@expo/vector-icons'; 
-
+const {height, width} = Dimensions.get('window');
 const login = (props) =>{
     return(
         <View style={styles.body}>
@@ -26,16 +26,22 @@ const login = (props) =>{
                             <TextInput style={styles.tb1} placeholder="Enter Password" placeholderTextColor={'#15f4ee'} secureTextEntry={true}></TextInput>
                         </View>
                     </View>
-                    <View style={styles.btnComponent}>
-                        <TouchableOpacity style={styles.button} onPress={() => props.navigation.navigate("Battery")}>
-                            <Text style={styles.buttonText}>Proceed</Text>
-                        </TouchableOpacity>
+                    
+                   
+                    <View style={styles.img1}>
+                            <Image source={require('../../assets/Launch_icons.png')} />
                     </View>
+                    <View style={styles.btnComponent}>
+                        <TouchableOpacity style={styles.button} onPress={() => props.navigation.navigate("Dashboard")}>
+                            <Text style={styles.buttonText}>Login</Text>
+                        </TouchableOpacity>
+                        
+
+                    </View>
+                    
                 </View>
             </View>
-            <View style={styles.img1}>
-                <Image source={require('../../assets/Launch_icons.png')} />
-            </View>
+            
         </View>
     )
 }

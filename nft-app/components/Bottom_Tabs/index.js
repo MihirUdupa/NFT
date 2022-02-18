@@ -8,6 +8,8 @@ const tabs = (props) => {
     const onPress1 = props.onPress1;
     const onPress2 = props.onPress2;
     const onPress3 = props.onPress3;
+    const onPress4 = props.onPress4;
+    
     return (
         <View style={styles.component}>
             <View style={styles.bottomTabsComponent}>
@@ -52,6 +54,10 @@ const tabs = (props) => {
                                 </Div>
                                 <Div className="align-items-center">
                                     <Text style={styles.otherTabs}>Other Info</Text>
+                                    <TouchableOpacity style={styles.circleClass} >
+                                        <Ionicons name="otherInfo" size={24} color="#15f4ee" onPress={() => onPress4()}/>
+                                    </TouchableOpacity>
+                                
                                 </Div>
                             </Div>
                         </Div>
