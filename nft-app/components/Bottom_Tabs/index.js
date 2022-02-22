@@ -49,15 +49,11 @@ const tabs = (props) => {
                             <Div className={'col-3 align-items-center'}>
                                 <Div className={'col-4 align-items-center'}>
                                     <TouchableOpacity style={styles.circleClass}>
-                                        <Ionicons name="information-circle-outline" size={24} color="#15f4ee"/>
+                                        <Ionicons name="information-circle-outline" size={24} color="#15f4ee" onPress={() => onPress4()}/>
                                     </TouchableOpacity>
                                 </Div>
                                 <Div className="align-items-center">
                                     <Text style={styles.otherTabs}>Other Info</Text>
-                                    <TouchableOpacity style={styles.circleClass} >
-                                        <Ionicons name="otherInfo" size={24} color="#15f4ee" onPress={() => onPress4()}/>
-                                    </TouchableOpacity>
-                                
                                 </Div>
                             </Div>
                         </Div>

@@ -59,9 +59,6 @@ const styles = StyleSheet.create({
     menuBoxItem1:{
         opacity:1,
         flexDirection:"row",
-    
-       
-        
     },
     itemText:{
         color:'#15f4ee',

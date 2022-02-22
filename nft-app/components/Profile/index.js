@@ -7,7 +7,6 @@ import Tabs from "../Bottom_Tabs";
 
 const profile = (props) =>{
     return(
-        <ScrollView>
         <View style={styles.component}>
             <View style={styles.header}>
                 <View style={styles.burgerMenu}>
@@ -64,7 +63,7 @@ const profile = (props) =>{
                     <AntDesign name="caretright" size={25} color="#15f4ee" />
                 </View></View>
             </View>
-            <View style={{paddingBottom:135,top:80}}>
+            <View style={{paddingBottom:125}}>
             {/* tabs */}
             <Tabs 
             onPress4={() => props.navigation.navigate("infopage")}
@@ -74,7 +73,6 @@ const profile = (props) =>{
             />
             </View>
         </View>
-        </ScrollView>
     )
 }
 

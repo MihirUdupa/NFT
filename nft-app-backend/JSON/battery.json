@@ -1,0 +1,30 @@
+{
+    "Userdata": [
+        {
+            "Mihir": [
+                {
+                    "battery_id": "1",
+                    "nft_id": "1",
+                    "transaction_id": "1rrjjru",
+                    "nft_cost": "2500"
+                },
+                {
+                    "battery_id": "2",
+                    "nft_id": "2",
+                    "transaction_id": "yugyuuyv",
+                    "nft_cost": "2500"
+                }
+            ]
+        },
+        {
+            "Vageesh": [
+                {
+                    "battery_id": "1",
+                    "nft_id": "1",
+                    "transaction_id": "yufytytv",
+                    "nft_cost": "2500"
+                }
+            ]
+        }
+    ]
+}
