@@ -13,7 +13,6 @@ const charger = (props) =>{
               </View>
               <View style={styles.detailsText}>
                 <Text style={styles.headerText}>Jon Doe</Text>
-                {/* <Text style={styles.headerText}>0x0000000000</Text> */}
                 <Text style={styles.headerText}>22 CC</Text>
               </View>
               <View style={styles.userImage}>
@@ -124,6 +123,7 @@ const charger = (props) =>{
             </View>
           </View>
           <Tabs style={styles.bottomTabs}
+                onPress4={() => props.navigation.navigate("infopage")}
                 onPress1={() => props.navigation.navigate("Profile")} 
                 onPress2={() => props.navigation.navigate("Accounts")}
           />

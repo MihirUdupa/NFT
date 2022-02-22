@@ -1,7 +1,7 @@
 import React from 'react';
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import { StyleSheet } from 'react-native';
+import { StyleSheet,Dimensions} from 'react-native';
 
 import LaunchScreen from './components/App_Launch/index';
 import LoginScreen from './components/Login/index';
@@ -10,10 +10,11 @@ import wallet from './components/Wallet/index';
 import Btabs from './components/Bottom_Tabs/index';
 import BatteryScreen from './components/Main_Screen/index';
 import chargers from './components/Main_Screen/charger';
-import home from './components/Home'
-
+import Infopage from './components/infopage';
+import dashboard from './components/Dashboard/index';
 
 import { StatusBar } from 'expo-status-bar';
+const {height, width} = Dimensions.get('window');
 
 const AppNavigator = createStackNavigator(
   {
@@ -23,8 +24,9 @@ const AppNavigator = createStackNavigator(
     Profile:ProfileScreen,
     Accounts:wallet,
     Battery:BatteryScreen,
-    Home:home,
     ChargerScreen:chargers,
+    infopage:Infopage,
+    Dashboard:dashboard
   },
   {
     defaultNavigationOptions:{

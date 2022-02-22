@@ -12,9 +12,15 @@ const styles = StyleSheet.create({
         left:80,
     },
     img1:{
-        top:430,
+        top:200,
         position:"absolute",
         left:-100
+    },
+    img5:{
+        paddingTop:285,
+        position:"absolute",
+        left:-100,
+      
     },
     introComponent:{
         paddingTop:0,
@@ -57,7 +63,7 @@ const styles = StyleSheet.create({
         paddingRight:5
     },
     btnComponent:{
-        paddingTop:25,
+        paddingTop:20,
         color:'#101010',
         width:225,
         alignContent:"center",
@@ -77,9 +83,14 @@ const styles = StyleSheet.create({
         paddingBottom:10,
         fontSize:20
     },
+    
     body:{
         height:'100%',
         backgroundColor:'#151F28'
+    },
+    background:{
+        //backgroundColor:'#151F28',
+        height:'100%'
     }
 });
 

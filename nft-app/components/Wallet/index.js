@@ -58,6 +58,7 @@ const wallet = (props) =>{
             <View style={{paddingBottom:70}}></View>
             {/* tabs */}
             <Tabs 
+            onPress4={() => props.navigation.navigate("infopage")}
             onPress1={() => props.navigation.navigate("Profile")}
             onPress3={() => props.navigation.navigate("Battery")}
             />
