@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
 });
 
 // import { StyleSheet, Text, View } from 'react-native';
-// import Launch from './components/Home';
+// import Launch from './components/infopage';
 
 // export default function App() {
 //   return (
