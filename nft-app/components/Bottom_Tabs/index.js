@@ -8,6 +8,8 @@ const tabs = (props) => {
     const onPress1 = props.onPress1;
     const onPress2 = props.onPress2;
     const onPress3 = props.onPress3;
+    const onPress4 = props.onPress4;
+    
     return (
         <View style={styles.component}>
             <View style={styles.bottomTabsComponent}>
@@ -26,12 +28,12 @@ const tabs = (props) => {
                             </Div>
                             <Div className={'col-3 align-items-center'}>
                                 <Div className={'col-4 align-items-center'}>
-                                    <TouchableOpacity style={styles.circleClassHighlited}>
-                                        <Ionicons name="person" size={24} color="#EEFFFF" onPress={() => onPress1()}/>
+                                    <TouchableOpacity style={styles.circleClass}>
+                                        <Ionicons name="person" size={24} color="#15f4ee" onPress={() => onPress1()}/>
                                     </TouchableOpacity>
                                 </Div>
                                 <Div className="align-items-center">
-                                    <Text style={styles.highlitedTabs}>Profile</Text>
+                                    <Text style={styles.otherTabs}>Profile</Text>
                                 </Div>
                             </Div>
                             <Div className={'col-3 align-items-center'}>
@@ -47,7 +49,7 @@ const tabs = (props) => {
                             <Div className={'col-3 align-items-center'}>
                                 <Div className={'col-4 align-items-center'}>
                                     <TouchableOpacity style={styles.circleClass}>
-                                        <Ionicons name="information-circle-outline" size={24} color="#15f4ee"/>
+                                        <Ionicons name="information-circle-outline" size={24} color="#15f4ee" onPress={() => onPress4()}/>
                                     </TouchableOpacity>
                                 </Div>
                                 <Div className="align-items-center">

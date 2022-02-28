@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState,useEffect} from "react";
 import { Text, View, Image, Button, TouchableOpacity } from "react-native";
 import styles from "./style";
 import { Ionicons } from '@expo/vector-icons';
@@ -6,6 +6,12 @@ import { AntDesign } from '@expo/vector-icons';
 import Tabs from "../Bottom_Tabs";
 
 const wallet = (props) =>{
+    const currency  = props.navigation.state.params.data.totalVal
+    const Username = props.navigation.state.params.data.Username
+    let data = {
+        Username:Username,
+        totalVal:currency
+    }
     return(
         <View style={styles.background}>
             <View style={styles.header}>
@@ -13,20 +19,20 @@ const wallet = (props) =>{
                     <Ionicons name="menu" size={25} color="#15f4ee" />
                 </View>
                 <View style={styles.logo}>
-                    <Image style={styles.img} source={require('../../assets/EV_NFT_Video.gif')}/>
+                    {/* <Image style={styles.img} source={require('../../assets/EV_NFT_Video.gif')}/> */}
                 </View>
             </View>
             <View style={styles.address}>
-                <Text style={styles.addressText}>0x390c4Fbc1Cb86e6F1670Eea9EC26D49A69C19eAD</Text>
+                {/* <Text style={styles.addressText}>0x390c4Fbc1Cb86e6F1670Eea9EC26D49A69C19eAD</Text> */}
             </View>
             <View style={styles.balance}>
                 <View style={styles.balance1}>
                     <Text style={styles.balanceText}>Total Balance</Text>
-                    <Text style={styles.balanceText}>$0.00</Text>
+                    <Text style={styles.balanceText}>{'\u20B9'}&nbsp;{currency * 100}</Text>
                 </View>
             </View>
             <View style={styles.menuBoxHeader}>
-                <Text style={styles.balanceText}>Attach Wallet</Text>
+                <Text style={styles.balanceText}>Attached Wallet</Text>
             </View>
             <View style={styles.menuBox}>
                 <View style={styles.firRow}> 
@@ -55,12 +61,13 @@ const wallet = (props) =>{
                     <Text style={styles.buttonText}>Transfer NFT</Text>
                 </TouchableOpacity>
             </View>
-            <View style={{paddingBottom:70}}></View>
+            <View style={{paddingTop:135}}></View>
             {/* tabs */}
-            <Tabs 
-            onPress1={() => props.navigation.navigate("Profile")}
-            onPress3={() => props.navigation.navigate("Battery")}
-            />
+                <Tabs 
+                onPress4={() => props.navigation.navigate("infopage",{data})}
+                onPress1={() => props.navigation.navigate("Profile",{data})}
+                onPress3={() => props.navigation.navigate("Battery")}
+                />
         </View>
     );
 }

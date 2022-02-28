@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+
     p:{
         top:40,
         color:'#15f4ee',
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
         height:200,
     },
     btnComponent:{
-        paddingTop:340,
+        paddingTop:100,//340
         alignContent:"center",
         alignSelf:"center",
         alignItems:"center"

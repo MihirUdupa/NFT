@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
     marginBottom:25
   },
   bottomTabs:{
-    marginTop:-50,
+    marginTop:0,
   }
 
 })

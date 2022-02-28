@@ -1,0 +1,19 @@
+{
+  "login": [
+    {
+      "id": "1",
+      "name": "Mihir",
+      "password": "@Debug17Mi."
+    },
+    {
+      "id": "2",
+      "name": "Vageesh",
+      "password": "Vageesh"
+    },
+    {
+      "id": "3",
+      "name": "Vishwas",
+      "password": "Vishwas"
+    }
+  ]
+}

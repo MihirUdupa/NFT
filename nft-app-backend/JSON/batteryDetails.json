@@ -1,0 +1,28 @@
+{
+    "Batterydata": [
+        {
+            "Mihir": [
+                {
+                    "battery_id": 1,
+                    "max_cycles": "500",
+                    "remaining_cycle": "450",
+                    "totalCC": "40",
+                    "battery_Cost": 20000,
+                    "total_cycles": 34
+                }
+            ]
+        },
+        {
+            "Vageesh": [
+                {
+                    "battery_id": 1,
+                    "max_cycles": "500",
+                    "remaining_cycle": "450",
+                    "totalCC": "44",
+                    "battery_Cost": 20000,
+                    "total_cycles": 34
+                }
+            ]
+        }
+    ]
+}
