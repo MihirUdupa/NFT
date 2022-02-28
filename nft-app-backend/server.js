@@ -5,7 +5,7 @@ const chargerFile = "./JSON/charger.json";
 const batteryDetails = './JSON/batteryDetails.json'
 let Cyclecalculator = require('./cycleCounter')
 
-const cors = require('cors')
+const cors = require('cors');
 
 
 
@@ -98,36 +98,45 @@ app.post('/checkUser',function(req,res){
     }
 });
 
-// app.get('/getData',function(req,res){
-//     let data = req.query.name
-//     let respData = {'baaterydta':[],
-//                     'carbon_data':[]
-// }
-//     let battery
-//     //reading the files for nft_id,battery_id,date,battery_slno
-//     let JSONdata = fs.readFileSync("./JSON/battery.json")
-//     let oldJSON = JSON.parse(JSONdata)
-//     for(let i=0;i<oldJSON.Userdata.length;i++){
-//         if(data == Object.keys(oldJSON.Userdata[i])[0]){
-//             respData.baaterydta = oldJSON.Userdata[i][data]
-//             // for(let j=0;j<oldJSON.Userdata[i][data].length;j++){
-//             //     battery = battery_id
-//             //     respData.Battery_Id = battery_id
-//             //     respData.NFT_Id = nft_id
-//             //     respData.NFT_Val = nft_cost
-//             // }
-//         }
-//     }
+app.get('/getBatteryData',function(req,res){
+    let data = req.query.name
+    let isValidcreadentails = false
+    let respData = []
+    //reading the files for nft_id,battery_id,date,battery_slno
+    let JSONdata = fs.readFileSync("./JSON/battery.json")
+    let oldJSON = JSON.parse(JSONdata)
+    for(let i=0;i<oldJSON.Userdata.length;i++){
+        if(data == Object.keys(oldJSON.Userdata[i])[0]){
+            respData = oldJSON.Userdata[i][data]
+            isValidcreadentails = true
+            break
+        }
+    }
 
-    //getting total cc
-//     let JSONdata1 = fs.readFileSync("./JSON/batteryDetails.json")
-//     let OldJSON1 = JSON.parse(JSONdata1)
-//     for(let i=0;i<OldJSON1.Batterydata.length;i++){
+    // getting total cc
+    if(isValidcreadentails == true){
+        let JSONdata1 = fs.readFileSync("./JSON/batteryDetails.json")
+        let OldJSON1 = JSON.parse(JSONdata1)
+        batteryDetailsBlock:
+            for(let i=0;i<OldJSON1.Batterydata.length;i++){
+                if(data == Object.keys(OldJSON1.Batterydata[i])[0]){
+                    for(let j=0;j<OldJSON1.Batterydata[i][data].length;j++){
+                        for(let k=0;k<respData.length;k++){
+                            if(respData[k].battery_id == OldJSON1.Batterydata[i][data][j].battery_id){
+                                respData[k].CCredit = OldJSON1.Batterydata[i][data][j].totalCC
+                            }
+                        }
+                    }
+                break batteryDetailsBlock
+                }
+            }  
+    }
+   
+    //sending the data
+    res.json({message:'Success',data:respData})
+});
 
-//     }
-// });
-
-app.post('/getCC',function(req,res){
+app.post('/getChargerData',function(req,res){
 
 });
 
@@ -180,6 +189,6 @@ function writeFile(oldJSON,fileName){
 }
 
 
-setInterval(()=>{
-    Cyclecalculator.getAllBatteries()
-},90000)
+// setInterval(()=>{
+//     Cyclecalculator.getAllBatteries()
+// },90000)

@@ -35,6 +35,7 @@ function calculateCC(totalCC,cycle,totalCost,remaining_Cycle,id,Username){
     console.log(totalCC,cycle,totalCost,remaining_Cycle,id,Username)
     let cost = totalCost/500;
     let ccEarned = cost*2*cycle;
+    ccEarned = ccEarned / 100;
     ccEarned = totalCC+ccEarned;
     totalCycle = remaining_Cycle - cycle;
     writeData(totalCycle,ccEarned,id,Username)
