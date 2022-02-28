@@ -1,24 +1,43 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import styles from './style';
 import { Ionicons } from '@expo/vector-icons';
 import Tabs from '../Bottom_Tabs'
-import Axios from 'axios'
-
-
-let GetData = (Username) => {
-  let data = ""
-  let cc = "10"
-  Axios.get('http://192.168.0.110:5000/getData', { params: { name: Username } }).then(function(res){
-    // cc = res.data.data.cc
-  })
-  return cc
-}
 
 
 const battery = (props) =>{
-  let Username = props.navigation.state.params.Username
-  let item = GetData(Username)
+  let Username = props.navigation.state.params.Username;
+  const [cc,setCC] = useState("");
+  const [battrey_id,setBat_Id] = useState("");
+  const [nft_id,setNft_Id] = useState("");
+  const [nft_cost,setNft_Cost] = useState("");
+  const [trxn_id,setTrxn_Id] = useState("");
+
+  useEffect(() => {
+    const url = `http://192.168.0.101:5000/getBatteryData?name=${Username}`;
+    const fetchData = async() =>{
+      try{
+        const response = await fetch(url);
+        const json = await response.json()
+        setCC(json.data[0].CCredit)
+        setBat_Id(json.data[0].battery_id)
+        setNft_Id(json.data[0].nft_id)
+        setNft_Cost(json.data[0].nft_cost)
+        setTrxn_Id(json.data[0].transaction_id)
+
+      }catch(error){
+        console.log("error", error);
+      }
+    }
+    fetchData();
+  }, [])
+
+  let data = {
+    Username:Username,
+    totalVal:cc,
+    page:"Battery"
+  }
+
   return(
       <View style={styles.container}>
         <View style={styles.subContainer}>
@@ -27,8 +46,7 @@ const battery = (props) =>{
             </View>
             <View style={styles.detailsText}>
               <Text style={styles.headerText}>{Username}</Text>
-              {/* <Text style={styles.headerText}>0x0000000000</Text> */}
-              <Text style={styles.headerText}>{item}</Text>
+              <Text style={styles.headerText}>{cc}&nbsp;CC</Text>
             </View>
             <View style={styles.userImage}>
               <Image style={styles.image} source={require('../../assets/u1.png')}></Image>
@@ -50,7 +68,7 @@ const battery = (props) =>{
         </View>
         {/* Battery Component */}
         
-        <View style={{paddingBottom:40}}>
+        <View style={{paddingBottom:25}}>
           <View style={styles.body}>
             <View style={styles.batteryComponent}>
                 <View style={styles.headerComponent}>
@@ -64,15 +82,15 @@ const battery = (props) =>{
                 {/* <View style={styles.hrLine}/> */}
                 <View style={styles.bodyComponent}>
                   <View style={styles.bodyDirection}>
-                    <Text style={styles.bodyText}>Date &nbsp;</Text>
-                    <Text style={styles.bodyText}>20/01/2022</Text>
+                    <Text style={styles.bodyText}>Battery Id &nbsp; : &nbsp;</Text>
+                    <Text style={styles.bodyText}>{battrey_id}</Text>
                   </View>
                   <View style={styles.bodyDirection}>
-                    <Text style={styles.bodyText}>Sl.No &nbsp;</Text>
+                    <Text style={styles.bodyText}>Sl.No &nbsp; : &nbsp;</Text>
                     <Text style={styles.bodyText}>202105AFRE</Text>
                   </View>
                   <View style={styles.bodyDirection}>
-                    <Text style={styles.bodyText}>Batch No &nbsp;</Text>
+                    <Text style={styles.bodyText}>Batch No &nbsp; : &nbsp;</Text>
                     <Text style={styles.bodyText}>20210301A</Text>
                   </View>
               </View>
@@ -99,11 +117,15 @@ const battery = (props) =>{
               <View style={styles.bodyComponent}>
                 <View style={styles.bodyDirection}>
                   <Text style={styles.bodyText}>Token ID &nbsp; : &nbsp;</Text>
-                  <Text style={styles.bodyText}>2</Text>
+                  <Text style={styles.bodyText}>{nft_id}</Text>
                 </View>
                 <View style={styles.bodyDirection}>
                   <Text style={styles.bodyText}>NFT Value &nbsp; : &nbsp;</Text>
-                  <Text style={styles.bodyText}>0.00 &nbsp;ETH</Text>
+                  <Text style={styles.bodyText}>{nft_cost} &nbsp;ETH</Text>
+                </View>
+                <View style={styles.bodyDirection}>
+                  <Text style={styles.bodyText}>Transaction Id &nbsp; : &nbsp;</Text>
+                  <Text style={styles.bodyText}>{trxn_id}</Text>
                 </View>
               </View>
             </View>
@@ -128,20 +150,20 @@ const battery = (props) =>{
               <View style={styles.bodyComponent}>
                 <View style={styles.bodyDirection}>
                   <Text style={styles.bodyText}>Total Points &nbsp; : &nbsp;</Text>
-                  <Text style={styles.bodyText}>22</Text>
+                  <Text style={styles.bodyText}>{cc}</Text>
                 </View>
                 <View style={styles.bodyDirection}>
                   <Text style={styles.bodyText}>Total Value &nbsp; : &nbsp;</Text>
-                  <Text style={styles.bodyText}>8800</Text>
+                  <Text style={styles.bodyText}>{'\u20B9'} &nbsp; {cc*100}</Text>
                 </View>
               </View>
             </View>
           </View>
         </View>
         <Tabs style={styles.bottomTabs}
-              onPress4={() => props.navigation.navigate("infopage")}
-              onPress1={() => props.navigation.navigate("Profile")} 
-              onPress2={() => props.navigation.navigate("Accounts")}
+              onPress4={() => props.navigation.navigate("infopage",{data})}
+              onPress1={() => props.navigation.navigate("Profile",{data})} 
+              onPress2={() => props.navigation.navigate("Accounts",{data})}
         />
     </View>
   );

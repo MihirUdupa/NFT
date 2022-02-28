@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import {
-  Platform,
-  StyleSheet,
   ScrollView, Dimensions,
   Text, TouchableOpacity,
-  View, Button, Picker, Image
+  View, Image
 } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import styles from "./style";
 import { Ionicons } from '@expo/vector-icons';
-// const {height, width} = Dimensions.get('window');
+import { AntDesign } from '@expo/vector-icons'; 
+const {height, width} = Dimensions.get('window');
 
 
 const dashboard = (props) => {
@@ -23,12 +22,12 @@ const dashboard = (props) => {
             <Text style={styles.buttonText}>Infopage</Text>
           </TouchableOpacity> */}
         </View>
-        <Image style={styles.icon} source={require('../../assets/Logo.png')} />
+        {/* <Image style={styles.icon} source={require('../../assets/Logo.png')} /> */}
       </View>
       <View style={styles.lines}></View>
 
       <ScrollView style={styles.scrollViewStyle}>
-        <Text style={styles.p}>Hello User...</Text>
+        <Text style={styles.p}>Hello {Username}</Text>
         <View style={styles.flexTopBox}>
           <View style={styles.righttoppane}>
             <TouchableOpacity style={styles.bigbutton} >
@@ -45,7 +44,7 @@ const dashboard = (props) => {
             <TouchableOpacity style={styles.bigbutton} onPress={() => props.navigation.navigate("Battery",{Username})}>
               <View>
                 {/* <Image style={styles.loc} source={require('../../assets/palomax-location.gif')} /> */}
-                <Image style={styles.seo} source={require('../../assets/i.png')} />
+                <Image style={styles.seo} source={require('../../assets/Analytics.png')} />
               </View>
             </TouchableOpacity>
             <Text style={styles.leftdesign}>Track status</Text>
@@ -71,14 +70,13 @@ const dashboard = (props) => {
             <View style={styles.screen1}>
               <View style={styles.s1}>
                 <View>
-                  <Text style={styles.s1text}>Charger</Text>
-                  <Text style={styles.s1text2}>Buy a Charger just </Text>
-                  <Text style={styles.s1text2}>at ₹1250 </Text>
-                  <TouchableOpacity style={{ backgroundColor: '#000000', top: 20, left: 170, width: 150, borderRadius: 20, height: 40 }} onPress={() => props.navigation.navigate("Profile")}>
-                    <Text style={{ color: '#487840', fontSize: 25, left: 30, alignItems: 'center' }}>Buy Now</Text>
-                  </TouchableOpacity>
+                  <Text style={styles.s1text}>Lithium-ion News</Text>
+                  <Text style={styles.s1text2}>Bengal’s e-vehicle aspiration, particularly e-buses in public transportation has hit a 
+                  bump following a massive crunch in supply of lithium ion 
+                  batteries that power electric vehicles (EV)</Text>
                   <Image style={styles.news} source={require('../../assets/charger2.png')} />
                 </View>
+                <AntDesign name="arrowright" size={25} color="#15f4ee" />
               </View>
             </View>
 
@@ -110,6 +108,10 @@ const dashboard = (props) => {
             </View>
 
           </ScrollView>
+        </View>
+        <View style={{width:150, alignContent:'center',alignItems:"center"}}>
+          {/* <AntDesign name="arrowright" size={25} color="#15f4ee" /> */}
+          {/* <Ionicons name="md-arrow-round-forward" size={25} color="#15f4ee"></Ionicons> */}
         </View>
       </ScrollView>
     </View>

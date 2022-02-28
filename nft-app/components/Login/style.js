@@ -4,12 +4,14 @@ const styles = StyleSheet.create({
     logo:{
         height:200,
         width:200,
-        left:80,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     img:{
         height:200,
         width:200,
-        left:80,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     img1:{
         top:200,
@@ -35,7 +37,7 @@ const styles = StyleSheet.create({
     },
     subTitle:{
         color:'#15f4ee',
-        fontSize:25,
+        fontSize:15,
         textAlign:"center",
         alignContent:"center"
     },

@@ -1,71 +1,67 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    container: {
-        //flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#151F28',
-        //padding:10,
-        // left:0,
-       
-        top:0        
-    },
-    backcolor:
-    {
-        backgroundColor: '#151F28',
-        height:'100%',
-        
-
-    },
-    infobackground:{
-        backgroundColor: '#487840',
-        opacity:0.5,
-        //alignItems: 'center',
-        justifyContent: 'center',
-        borderColor:'#cd853f',
-        width:'100%',
-        top:-60,
-        paddingBottom:20
-    },
-    con:
-    {
-        borderColor:'#cd853f',
-    },
-    bor:{
-     
-        color:'pink'
-    },
-    co:{
-        color:'#15f4ee',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontFamily:"Roboto",
-        width:'100%',
-        fontSize:20,
-        borderColor:'#cd853f',
-    },
-    //   pick:{
-    //     backgroundColor: '#487840',
-    //     borderColor:'#cd853f'
-    //   }, 
-    logo:{
-        height:200,
-        width:200,
-        top:-60
-    },
-    img:{
-        height:200,
-        width:200,
-        left:80,
-    },
-    menuBar:{
-        top:10,
-        left:-90,
-        paddingRight:85,
-    },
-  
-    
+  container:{
+    backgroundColor:'#151F28',
+    height:'100%',
+    flex: 1,
+  },
+  listBackground:{
+    width:'100%',
+    marginTop:250,
+    justifyContent:"center",
+    alignItems:"center",
+    flex:2,
+    position:"absolute",
+    marginBottom:150
+  },
+  list:{
+    backgroundColor:'#487840',
+    borderColor:'#FFC914',
+    borderWidth:1,
+    width:250,
+    opacity:0.8,
+    marginBottom:10
+  },
+  listColor:{
+    color:'#15f4ee',
+    textAlign:"center", 
+    padding:10, 
+  },
+  modalBody:{
+    backgroundColor:'#487840',
+    opacity:0.8,
+  },
+  modalBorderStyles:{
+    padding:25
+  },
+  modalBodyHeading:{
+    textAlign:"center",
+    fontSize:25,
+    color:"#15f4ee",
+    paddingBottom:15
+  },
+  centeredView:{
+    marginBottom:640
+  },
+  modalBodyHeadingCenter:{
+    justifyContent:"center",
+    textAlign:"center",
+    alignItems:"center"
+  },
+  closeButton:{
+    position:"absolute",
+    justifyContent:"flex-start",
+    marginLeft:250,
+    borderRadius:1,
+    borderWidth:1,
+    top:-25,
+    left:30,
+    backgroundColor:'red'
+  },
+  closeButtonText:{
+    padding:5
+  }
 });
 
 export default styles

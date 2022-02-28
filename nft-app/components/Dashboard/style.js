@@ -56,7 +56,8 @@ const styles = StyleSheet.create({
     height: 150,
     width: 150,
     alignItems: "center",
-    alignSelf: "center"
+    alignSelf: "center",
+    borderRadius:25
   },
   loc: {
     left: -40,
@@ -161,19 +162,21 @@ const styles = StyleSheet.create({
     width: 100,
     height: 125,
     left: 10,
-    top: -125,
+    top: -75,
     borderRadius: 50,
     backgroundColor: '#487840',
   },
   s1text: {
     top:10,
-    left: 170,
-    fontSize: 35,
+    left: 120,
+    fontSize: 25,
   },
   s1text2: {
-    top: 10,
-    left: 150,
-    fontSize: 20,
+    top: 25,
+    left: 120,
+    fontSize: 10,
+    width:200,
+    color:"#fff"
   },
   screen2text: {
     color: '#15f4ee',
@@ -185,7 +188,7 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: -3, height: 2 },
   },
   manlogo: {
-    left: 90,
+    left: 160,
     height: 43,
     width: 43,
     alignItems: "center",

@@ -11,8 +11,10 @@ const login = (props) =>{
     return(
         <View style={styles.body}>
             <View style={styles.component}>
-                <View style={styles.logo}>
-                    <Image style={styles.img} source={require('../../assets/EV_NFT_Video.gif')}/>
+                <View style={{justifyContent: 'center',alignItems: 'center',}}>
+                    <View style={styles.logo}>
+                        <Image style={styles.img} source={require('../../assets/EV_NFT_Video.gif')}/>
+                    </View>
                 </View>
                 <View style={styles.introComponent}>
                     <Text style={styles.intro}>Login</Text>
@@ -45,20 +47,31 @@ const login = (props) =>{
                     </View>
                     <View style={styles.btnComponent}>
                         <TouchableOpacity style={styles.button} onPress={()=>{
-                            let options = {
-                                "name":text,
-                                "pass":pass
-                            };
-                            // Axios.post("http://192.168.0.108:5000/checkUser",JSON.stringify(options))
-                            // .then(function(res){
-                            //     if(res.data.data.status ==1){
-                            //         props.navigation.navigate("Dashboard")
-                            //     }else{
-                            //         console.log(res.data)
-                            //         Alert.alert("invalid credentials")
-                            //     }
-                            // });
-                            props.navigation.navigate("Dashboard",{text})
+                            if(text == "" && pass == ""){
+                                Alert.alert("Empty Input","Please enter the User name and Password to login")
+                            }else if(text != "" && pass == ""){
+                                Alert.alert("Empty Input","Please enter the Password to login")
+                            }else if(text == "" && pass != ""){
+                                Alert.alert("Empty Input","Please enter the Username to login")
+                            }else{
+                                let options = {
+                                    "name":text,
+                                    "pass":pass
+                                };
+                                Axios.post("http://192.168.0.101:5000/checkUser",JSON.stringify(options))
+                                .then(function(res){
+                                    if(res.data.data.status ==1){
+                                        props.navigation.navigate("Dashboard",{text})
+                                        setText('');
+                                        setPass('');
+                                    }else{
+                                        console.log(res.data)
+                                        Alert.alert("Invalid Credentials","Please Check Username and Password")
+                                    }
+                                    console.log(process.env)
+                                });
+                            }
+                            // props.navigation.navigate("Dashboard",{text})
                         }}>
                             <Text style={styles.buttonText}>Login</Text>
                         </TouchableOpacity>
