@@ -75,7 +75,7 @@ const Infopage = (props) =>{
                     <View style={styles.modalBorderStyles}>
                         <View style={{flexDirection:"row"}}>
                             <View>
-                                <Text style={styles.modalBodyHeading}>Carbon Credits</Text>
+                                <Text style={styles.modalBodyHeading}>Carbon Points</Text>
                             </View>
                             <TouchableOpacity style={styles.closeButton} onPress={toggleModal2}>
                                 <Text style={styles.closeButtonText}>X</Text>

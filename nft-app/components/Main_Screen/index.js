@@ -12,22 +12,38 @@ const battery = (props) =>{
   const [nft_id,setNft_Id] = useState("");
   const [nft_cost,setNft_Cost] = useState("");
   const [trxn_id,setTrxn_Id] = useState("");
-
+  // const [trxHash,setHash] = useState("");
+  // const [timeData,setTimeData] = useState("");
+  let trxHash = []
   useEffect(() => {
-    const url = `http://192.168.0.101:5000/getBatteryData?name=${Username}`;
+    const sleep = (milliseconds) => {
+      return new Promise(resolve => setTimeout(resolve, milliseconds))
+    }    
+    const url = `http://192.168.0.109:5000/getBatteryData?name=${Username}`;
     const fetchData = async() =>{
       try{
         const response = await fetch(url);
-        const json = await response.json()
-        setCC(json.data[0].CCredit)
-        setBat_Id(json.data[0].battery_id)
-        setNft_Id(json.data[0].nft_id)
-        setNft_Cost(json.data[0].nft_cost)
-        setTrxn_Id(json.data[0].transaction_id)
-
+        const json1 = await response.json()
+        setCC(json1.data[0].CCredit)
+        setBat_Id(json1.data[0].battery_id)
+        setNft_Id(json1.data[0].nft_id)
+        setNft_Cost(json1.data[0].nft_cost)
+        setTrxn_Id(json1.data[0].transaction_id)
+        const bid = json1.data[0].battery_id
+        await sleep(5000)
+        const url1 = `http://192.168.0.109:5000/getDetails?name=${Username}&productName=battery&id=${bid}`;
+        const resp = await fetch(url1);
+        const json = await resp.json()
+        console.log(json)
+        // setDataSource(json)
+        for(let i=0;i<json.data.length;i++){
+          trxHash.push(json.data[i])
+          // setTimeData(json.data[i].time)
+        }
       }catch(error){
-        console.log("error", error);
+        console.log("Error",error)
       }
+      console.log(trxHash)
     }
     fetchData();
   }, [])
@@ -46,7 +62,7 @@ const battery = (props) =>{
             </View>
             <View style={styles.detailsText}>
               <Text style={styles.headerText}>{Username}</Text>
-              <Text style={styles.headerText}>{cc}&nbsp;CC</Text>
+              <Text style={styles.headerText}>{cc}&nbsp;CP</Text>
             </View>
             <View style={styles.userImage}>
               <Image style={styles.image} source={require('../../assets/u1.png')}></Image>
@@ -68,7 +84,7 @@ const battery = (props) =>{
         </View>
         {/* Battery Component */}
         
-        <View style={{paddingBottom:25}}>
+        <View style={{paddingBottom:5}}>
           <View style={styles.body}>
             <View style={styles.batteryComponent}>
                 <View style={styles.headerComponent}>
@@ -145,7 +161,7 @@ const battery = (props) =>{
                     <Image style={styles.img} source={require('../../assets/icons8-get-money-100.png')}/>
                   </View>
                 </View>
-                <Text style={styles.cCHeaderBody}>Carbon Credit Details</Text>
+                <Text style={styles.cCHeaderBody}>Carbon Points Details</Text>
               </View>
               <View style={styles.bodyComponent}>
                 <View style={styles.bodyDirection}>
@@ -159,12 +175,17 @@ const battery = (props) =>{
               </View>
             </View>
           </View>
+            <View style={{top:-50}}>
+              {trxHash.map((item,key)=>(
+                <View><Text>{item.hash}</Text><Text>{item.time}</Text></View>
+              ))}
+            </View>
         </View>
-        <Tabs style={styles.bottomTabs}
+        {/* <Tabs style={styles.bottomTabs}
               onPress4={() => props.navigation.navigate("infopage",{data})}
               onPress1={() => props.navigation.navigate("Profile",{data})} 
               onPress2={() => props.navigation.navigate("Accounts",{data})}
-        />
+        /> */}
     </View>
   );
 }

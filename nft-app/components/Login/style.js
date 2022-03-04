@@ -14,9 +14,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     img1:{
-        top:200,
+        top:390,
         position:"absolute",
-        left:-100
+        left:-150
     },
     img5:{
         paddingTop:285,
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
         paddingRight:5
     },
     btnComponent:{
-        paddingTop:20,
+        paddingTop:35,
         color:'#101010',
         width:225,
         alignContent:"center",

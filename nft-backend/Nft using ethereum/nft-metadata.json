@@ -1,24 +1,20 @@
 {
     "attributes": [
       {
-        "trait_type": "Wood",
-        "value": "wood color"
+        "trait_type": "Sl.No",
+        "value": "20220304004"
       },
       {
-        "trait_type": "Frog",
-        "value": "brown"
+        "trait_type": "Batch.No",
+        "value": "March-2022-Rajesh"
       },
       {
-        "trait_type": "background",
-        "value": "white"
-      },
-      {
-        "trait_type": "finwefwefwefger nails",
-        "value": "long white"
+        "trait_type": "MFG.Dt",
+        "value": "03/04/2022"
       }
     ],
-    "description": "wodden blocks stacked on top of each othere",
-    "image": "https://gateway.pinata.cloud/ipfs/Qmf8DxK3BjitunCe2fqQo3PRjXdBj1zdFqvT15cSY9Vn1o",
-    "name": "joker picture"
+    "description": "A Battrey minted for Mihir",
+    "image": "https://gateway.pinata.cloud/ipfs/QmeC6w4VoK2pNwKL2W3bruhTHcroURxQSDpPRbMaXpfBjL",
+    "name": "Battery004"
   }
   

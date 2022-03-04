@@ -9,9 +9,9 @@ const styles = StyleSheet.create({
   },
   rightdesign: {
     color: 'white',
-    fontSize: 20,
+    // fontSize: 20,
     alignItems: 'center',
-    top: -15,
+    top: -35,
     textAlign:'center',
     alignContent:'center'
   },
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   },
   leftdesign: {
     color: 'white',
-    fontSize: 20,
+    // fontSize: 20,
     alignItems: 'center',
     top: 15,
     alignContent:"center",
@@ -37,11 +37,15 @@ const styles = StyleSheet.create({
     rotation: -10
   },
   charger: {
-    top: -20,
+    top: -50,
     height: 100,
-    width: 160,
+    width: 100,
     alignItems: "center",
     alignSelf: "center"
+  },
+  chargerView:{
+    height:100,
+    width:100
   },
   bit: {
     height: '80%',
@@ -127,19 +131,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#487840',
   },
   screen2image: {
-    backgroundColor: '#487840',
+    // backgroundColor: '#487840',
     width: 100,
     height: 100,
     borderRadius: 50,
-    top: -230,
+    top: -210,
     left:220
   },
   screen3image: {
-    backgroundColor: '#487840',
     width: 100,
     height: 100,
     left: 230,
-    borderRadius: 55,
     top: -100
   },
   s2: {
@@ -162,7 +164,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 125,
     left: 10,
-    top: -75,
+    top: -55,
     borderRadius: 50,
     backgroundColor: '#487840',
   },
@@ -223,7 +225,7 @@ const styles = StyleSheet.create({
   {
     width: 350,
     height: '20%',
-    left: -2,
+    // left: -2,
     borderRadius: 60,
     padding: 0,
     shadowColor: 'white',
@@ -408,13 +410,13 @@ const styles = StyleSheet.create({
   s2headerText:{
     fontSize: 20, 
     left: 30,
-    top:-160, 
+    top:-130, 
     alignItems: 'center' 
   },
   s2bodyText:{ 
     color: 'white', 
     fontSize: 10,
-    top:-140, 
+    top:-120, 
     left: 10, 
     width:200, 
     alignItems: 'center' 
