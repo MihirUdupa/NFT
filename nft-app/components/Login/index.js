@@ -10,6 +10,9 @@ const login = (props) =>{
     const [pass, setPass] = useState('');
     return(
         <View style={styles.body}>
+            <View style={styles.img1}>
+                    <Image source={require('../../assets/Launch_icons.png')} />
+            </View>
             <View style={styles.component}>
                 <View style={{justifyContent: 'center',alignItems: 'center',}}>
                     <View style={styles.logo}>
@@ -40,11 +43,6 @@ const login = (props) =>{
                             defaultValue={pass}></TextInput>
                         </View>
                     </View>
-                    
-                   
-                    <View style={styles.img1}>
-                            <Image source={require('../../assets/Launch_icons.png')} />
-                    </View>
                     <View style={styles.btnComponent}>
                         <TouchableOpacity style={styles.button} onPress={()=>{
                             if(text == "" && pass == ""){
@@ -58,7 +56,7 @@ const login = (props) =>{
                                     "name":text,
                                     "pass":pass
                                 };
-                                Axios.post("http://192.168.0.101:5000/checkUser",JSON.stringify(options))
+                                Axios.post("http://192.168.0.109:5000/checkUser",JSON.stringify(options))
                                 .then(function(res){
                                     if(res.data.data.status ==1){
                                         props.navigation.navigate("Dashboard",{text})

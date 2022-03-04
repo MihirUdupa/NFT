@@ -13,6 +13,7 @@ contract MyNFT is ERC721URIStorage, Ownable {
     event Transfer1(address indexed _from, address indexed _to, uint256 indexed _tokenId);
     mapping(uint256 => address) internal idToOwner;
     using Counters for Counters.Counter;
+    mapping (uint256 => uint256) public tokenIdToCP;
     mapping (uint256 => uint256) public tokenIdToPrice;
     mapping (uint256 => address) public tokenIdToTokenAddress;
     Counters.Counter private _tokenIds;
@@ -56,6 +57,20 @@ contract MyNFT is ERC721URIStorage, Ownable {
         tokenIdToTokenAddress[_tokenId] = _tokenAddress;
         uint256 priceda = tokenIdToPrice[_tokenId];
         return priceda;
+    }
+
+    //function to set the carbon points
+    function setCarbonPoints(uint256 _tokenId, uint256 _CP, address _tokenAddress, address _ownerAddress) public {
+        require(_ownerAddress == ownerOf(_tokenId), 'Not owner of this token');
+        tokenIdToCP[_tokenId] = _CP;
+        tokenIdToTokenAddress[_tokenId] = _tokenAddress;
+    }
+
+    //function getting the carbon points
+    function getCarbonPoints(uint256 _tokenId, address _tokenAddress) public returns (uint256){
+        tokenIdToTokenAddress[_tokenId] = _tokenAddress;
+        uint256 CPda = tokenIdToCP[_tokenId];
+        return CPda;
     }
 
     //function to allow the buyer to buy

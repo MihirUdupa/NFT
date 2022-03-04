@@ -1,31 +1,14 @@
 {
-    "ChargerData":[
+    "ChargerData": [
         {
-            "Mihir":[
+            "Mihir": [
                 {
-                    "charger_id":1,
-                    "nft_id":3,
-                    "transaction_id": "1rrjjru",
-                    "nft_cost": "1500"
-                },
-                {
-                    "charger_id":2,
-                    "nft_id":4,
-                    "transaction_id": "yugyugyuuu",
-                    "nft_cost": "1500"
-                }
-            ]
-        },
-        {
-            "Vageesh":[
-                {
-                    "charger_id":1,
-                    "nft_id":2,
-                    "transaction_id": "nomomoim",
+                    "charger_id": 1,
+                    "nft_id": 6,
+                    "transaction_id": "0x47711fc39a640b222475d247837befd8636d732187d97c5f885970a0742a4105",
                     "nft_cost": "1500"
                 }
             ]
         }
     ]
-
 }

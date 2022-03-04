@@ -32,17 +32,17 @@ const dashboard = (props) => {
           <View style={styles.righttoppane}>
             <TouchableOpacity style={styles.bigbutton} >
               {/* onPress={() => props.navigation.navigate("Battery")} */}
-              <View>
+              <View style={styles.chargerView}>
                 <Image style={styles.ribbon} source={require('../../assets/ribbon.png')} />
               </View>
-              <Image style={styles.charger} source={require('../../assets/battery1.jpg')} />
+              <Image style={styles.charger} source={require('../../assets/electric-station.png')} />
               <Text style={styles.rightdesign}>@ ₹250 Only</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.lefttoppane}>
             <TouchableOpacity style={styles.bigbutton} onPress={() => props.navigation.navigate("Battery",{Username})}>
-              <View>
+              <View style={styles.seoView}>
                 {/* <Image style={styles.loc} source={require('../../assets/palomax-location.gif')} /> */}
                 <Image style={styles.seo} source={require('../../assets/Analytics.png')} />
               </View>
@@ -60,7 +60,7 @@ const dashboard = (props) => {
           <View style={styles.leftbottompane}>
             <View>
               <Image style={styles.bit1} source={require('../../assets/carbon.png')} />
-              <Text style={{ color: 'white', left: 40, top: 20 }}>Carbon credits</Text>
+              <Text style={{ color: 'white', left: 40, top: 20 }}>Carbon Points</Text>
             </View>
           </View>
         </View>
@@ -76,7 +76,6 @@ const dashboard = (props) => {
                   batteries that power electric vehicles (EV)</Text>
                   <Image style={styles.news} source={require('../../assets/charger2.png')} />
                 </View>
-                <AntDesign name="arrowright" size={25} color="#15f4ee" />
               </View>
             </View>
 
@@ -84,14 +83,12 @@ const dashboard = (props) => {
               <View style={styles.s2}></View>
               <View>
                 <View>
-                  <Text style={styles.s2headerText}>Carbon Credit News</Text>
-                  <TouchableOpacity styel={styles.screen2Button} >
-                    <View>
-                      <Text style={styles.s2bodyText}>Many countries worldwide are committing to the global goal of achieving net-zero 
-                        emissions by 2050. A crucial element in reaching this goal is for companies around the 
-                        world to track and report their carbon and greenhouse gas emissions.  </Text>
-                    </View>
-                  </TouchableOpacity>
+                  <Text style={styles.s2headerText}>Carbon Points News</Text>
+                  <View>
+                    <Text style={styles.s2bodyText}>Many countries worldwide are committing to the global goal of achieving net-zero 
+                      emissions by 2050. A crucial element in reaching this goal is for companies around the 
+                      world to track and report their carbon and greenhouse gas emissions.  </Text>
+                  </View>
                 </View>
                 <Image style={styles.screen2image} source={require('../../assets/leaf.png')} />
               </View>
@@ -103,7 +100,7 @@ const dashboard = (props) => {
                 <Text style={styles.s3bodyText}>NFT traders were rocked by an earthquake on Sunday. Opensea, the vast NFT trading ocean, was the center of a new storm
                  in the form of a heist.Valuable NFTs were stolen, including Bored Ape Yacht Club 
                  and Mutant Ape Yacht Club assets.</Text>
-                <Image style={styles.screen3image} source={require('../../assets/slide3.png')} />
+                <Image style={styles.screen3image} source={require('../../assets/nft_image.png')} />
               </View>
             </View>
 

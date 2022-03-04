@@ -1,26 +1,38 @@
 {
     "Batterydata": [
         {
-            "Mihir": [
+            "Vageesh": [
                 {
-                    "battery_id": 1,
+                    "battery_id": "5",
                     "max_cycles": "500",
-                    "remaining_cycle": "450",
-                    "totalCC": "40",
+                    "remaining_cycle": "500",
+                    "totalCC": "0",
                     "battery_Cost": 20000,
-                    "total_cycles": 34
+                    "total_cycles": 0
                 }
             ]
         },
         {
-            "Vageesh": [
+            "Mihir": [
                 {
-                    "battery_id": 1,
+                    "battery_id": "4",
                     "max_cycles": "500",
-                    "remaining_cycle": "450",
-                    "totalCC": "44",
+                    "remaining_cycle": "500",
+                    "totalCC": "0",
                     "battery_Cost": 20000,
-                    "total_cycles": 34
+                    "total_cycles": 0
+                }
+            ]
+        },
+        {
+            "Vishwas": [
+                {
+                    "battery_id": "6",
+                    "max_cycles": "500",
+                    "remaining_cycle": "500",
+                    "totalCC": "0",
+                    "battery_Cost": 20000,
+                    "total_cycles": 0
                 }
             ]
         }
