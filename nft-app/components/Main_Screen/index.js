@@ -14,12 +14,12 @@ const battery = (props) =>{
   const [trxn_id,setTrxn_Id] = useState("");
   // const [trxHash,setHash] = useState("");
   // const [timeData,setTimeData] = useState("");
-  let trxHash = []
+  // let trxHash = []
   useEffect(() => {
-    const sleep = (milliseconds) => {
-      return new Promise(resolve => setTimeout(resolve, milliseconds))
-    }    
-    const url = `http://192.168.0.109:5000/getBatteryData?name=${Username}`;
+    // const sleep = (milliseconds) => {
+    //   return new Promise(resolve => setTimeout(resolve, milliseconds))
+    // }    
+    const url = `http://52.66.230.14:5000/getBatteryData?name=${Username}`;
     const fetchData = async() =>{
       try{
         const response = await fetch(url);
@@ -29,21 +29,20 @@ const battery = (props) =>{
         setNft_Id(json1.data[0].nft_id)
         setNft_Cost(json1.data[0].nft_cost)
         setTrxn_Id(json1.data[0].transaction_id)
-        const bid = json1.data[0].battery_id
-        await sleep(5000)
-        const url1 = `http://192.168.0.109:5000/getDetails?name=${Username}&productName=battery&id=${bid}`;
-        const resp = await fetch(url1);
-        const json = await resp.json()
-        console.log(json)
-        // setDataSource(json)
-        for(let i=0;i<json.data.length;i++){
-          trxHash.push(json.data[i])
-          // setTimeData(json.data[i].time)
-        }
+        // const bid = json1.data[0].battery_id
+        // await sleep(5000)
+      //   const url1 = `http://192.168.0.109:5000/getDetails?name=${Username}&productName=battery&id=${bid}`;
+      //   const resp = await fetch(url1);
+      //   const json = await resp.json()
+      //   console.log(json)
+      //   // setDataSource(json)
+      //   for(let i=0;i<json.data.length;i++){
+      //     trxHash.push(json.data[i])
+      //     // setTimeData(json.data[i].time)
+        // }
       }catch(error){
         console.log("Error",error)
       }
-      console.log(trxHash)
     }
     fetchData();
   }, [])
@@ -84,7 +83,7 @@ const battery = (props) =>{
         </View>
         {/* Battery Component */}
         
-        <View style={{paddingBottom:5}}>
+        <View style={{paddingBottom:'2%'}}>
           <View style={styles.body}>
             <View style={styles.batteryComponent}>
                 <View style={styles.headerComponent}>
@@ -139,9 +138,10 @@ const battery = (props) =>{
                   <Text style={styles.bodyText}>NFT Value &nbsp; : &nbsp;</Text>
                   <Text style={styles.bodyText}>{nft_cost} &nbsp;ETH</Text>
                 </View>
-                <View style={styles.bodyDirection}>
-                  <Text style={styles.bodyText}>Transaction Id &nbsp; : &nbsp;</Text>
-                  <Text style={styles.bodyText}>{trxn_id}</Text>
+                <View>
+                  {/* style={styles.bodyDirection} */}
+                  <Text style={styles.nftbodyText}>Transaction Id &nbsp; : &nbsp;</Text>
+                  <Text style={styles.nftbodyText}>{trxn_id}</Text>
                 </View>
               </View>
             </View>
@@ -172,20 +172,19 @@ const battery = (props) =>{
                   <Text style={styles.bodyText}>Total Value &nbsp; : &nbsp;</Text>
                   <Text style={styles.bodyText}>{'\u20B9'} &nbsp; {cc*100}</Text>
                 </View>
+                <View style={styles.bodyDirection}>
+                  <Text style={styles.bodyText}></Text>
+                  <Text style={styles.bodyText}></Text>
+                </View>
               </View>
             </View>
           </View>
-            <View style={{top:-50}}>
-              {trxHash.map((item,key)=>(
-                <View><Text>{item.hash}</Text><Text>{item.time}</Text></View>
-              ))}
-            </View>
         </View>
-        {/* <Tabs style={styles.bottomTabs}
+        <Tabs style={styles.bottomTabs}
               onPress4={() => props.navigation.navigate("infopage",{data})}
               onPress1={() => props.navigation.navigate("Profile",{data})} 
               onPress2={() => props.navigation.navigate("Accounts",{data})}
-        /> */}
+        />
     </View>
   );
 }

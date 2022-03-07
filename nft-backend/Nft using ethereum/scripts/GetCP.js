@@ -11,7 +11,7 @@ const contractAddress = "0xa838C42cdcCBAd34660224001c06c1fCa7239FD1";
 const contract = new web3.eth.Contract(Contract.abi, contractAddress);
 
 async function getCP(){
-    const token = 1;
+    const token = 4;
     const CP = await contract.methods.getCarbonPoints(token,PUBLIC_KEY).call()
     console.log("The Current Price of NFT is ",CP);
 }

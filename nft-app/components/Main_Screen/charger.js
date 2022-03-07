@@ -13,17 +13,16 @@ const charger = (props) =>{
   const [trxn_id,setTrxn_Id] = useState("");
 
   useEffect(() => {
-    const url = `http://192.168.0.110:5000/getChargerData?name=${Username}`;
+    const url = `http://52.66.230.14:5000/getChargerData?name=${Username}`;
     const fetchData = async() =>{
       try{
         const response = await fetch(url);
         const json = await response.json()
         setCC(json.data[0].CCredit)
-        setBat_Id(json.data[0].battery_id)
+        setBat_Id(json.data[0].charger_id)
         setNft_Id(json.data[0].nft_id)
         setNft_Cost(json.data[0].nft_cost)
         setTrxn_Id(json.data[0].transaction_id)
-
       }catch(error){
         console.log("error", error);
       }
@@ -65,7 +64,7 @@ const charger = (props) =>{
             </View>
           </View>
           {/* Charger Component */}
-          <View style={{paddingBottom:40}}>
+          <View style={{paddingBottom:'2%'}}>
             <View style={styles.body}>
               <View style={styles.batteryComponent}>
                   <View style={styles.headerComponent}>
@@ -120,6 +119,10 @@ const charger = (props) =>{
                     <Text style={styles.bodyText}>NFT Value &nbsp; : &nbsp;</Text>
                     <Text style={styles.bodyText}>{nft_cost} &nbsp;ETH</Text>
                   </View>
+                  <View>
+                    <Text style={styles.nftbodyText}>Transaction ID &nbsp; : &nbsp;</Text>
+                    <Text style={styles.nftbodyText}>{trxn_id}</Text>
+                  </View>
                 </View>
               </View>
             </View>
@@ -148,6 +151,10 @@ const charger = (props) =>{
                   <View style={styles.bodyDirection}>
                     <Text style={styles.bodyText}>Total Value &nbsp; : &nbsp;</Text>
                     <Text style={styles.bodyText}>{'\u20B9'} &nbsp; {cc*100}</Text>
+                  </View>
+                  <View style={styles.bodyDirection}>
+                    <Text style={styles.bodyText}></Text>
+                    <Text style={styles.bodyText}></Text>
                   </View>
                 </View>
               </View>

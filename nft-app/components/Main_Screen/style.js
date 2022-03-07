@@ -84,9 +84,10 @@ const styles = StyleSheet.create({
     borderRadius:10
   },
   imgComponent:{
-    paddingTop:15,
-    paddingLeft:15,
-    paddingBottom:15
+    paddingTop:'5%',
+    paddingLeft:'5%',
+    paddingBottom:'5%'
+    // padding:'5%'
   },
   img:{
     width:64,
@@ -102,10 +103,10 @@ const styles = StyleSheet.create({
   bodyComponent:{
     paddingLeft:90,
     marginTop:-60,
-    marginBottom:25
+    marginBottom:'10%'
   },
   batteryComponent:{
-    top:40,
+    top:'40%',
     backgroundColor:'#487840',
     opacity:0.9,
     borderRadius:15,
@@ -113,18 +114,18 @@ const styles = StyleSheet.create({
   batteryHeaderBody:{
     color:'#15f4ee',
     top:10,
-    paddingLeft:20
+    paddingLeft:'5%'
   },
   rightArrow1:{
-    left:300,
+    left:'85%',
   },
   smallBattery:{
     width:32,
     height:32,
-    left:312
+    left:'88%'
   },
   rightArrow2:{
-    left:300
+    left:'85%'
   },
   nftComponent:{
     top:-40,
@@ -134,27 +135,27 @@ const styles = StyleSheet.create({
   },
   nftHeaderBody:{
     color:'#15f4ee',
-    top:10,
+    top:'3%',
     paddingLeft:30
   },
   nftBodyComponent:{
-    paddingLeft:90,
-    marginTop:-60,
-    marginBottom:25
+    paddingLeft:'90%',
+    marginTop:'60%',
+    marginBottom:'10%'
   },
   leftArrow1:{
     top:-60,
-    left:30,
+    left:'8%',
   },
   carbon:{
     height:32,
     width:32,
     top:-60,
-    left:20,
+    left:'4%',
     position:'absolute'
   },
   leftArrow2:{
-    left:32,
+    left:'8%',
     top:-30
   },
   cCComponent:{
@@ -166,7 +167,7 @@ const styles = StyleSheet.create({
   cCHeaderBody:{
     color:'#15f4ee',
     top:10,
-    paddingLeft:30
+    paddingLeft:'5%'
   },
   cCBodyComponent:{
     paddingLeft:90,
@@ -175,6 +176,10 @@ const styles = StyleSheet.create({
   },
   bottomTabs:{
     marginTop:0,
+  },
+  nftbodyText:{
+    fontSize:9,
+    color:'#15f4ee',
   }
 
 })

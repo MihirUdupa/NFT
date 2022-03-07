@@ -63,6 +63,8 @@ async function setNFTCP(CPoints,id,PUBKey,PRIKey){
     })
 }
 
+// updateData('Vishwas',80,5)
+
 module.exports = {
     updateData:updateData
 }

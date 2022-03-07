@@ -56,7 +56,7 @@ const login = (props) =>{
                                     "name":text,
                                     "pass":pass
                                 };
-                                Axios.post("http://192.168.0.109:5000/checkUser",JSON.stringify(options))
+                                Axios.post("http://52.66.230.14:5000/checkUser",JSON.stringify(options))
                                 .then(function(res){
                                     if(res.data.data.status ==1){
                                         props.navigation.navigate("Dashboard",{text})
