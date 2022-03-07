@@ -201,7 +201,7 @@ app.get('/getBatteryData',async function(req,res){
 
 
 //getting charger data
-app.post('/getChargerData',async function(req,res){
+app.get('/getChargerData',async function(req,res){
     let Username = req.query.name
     let respData = []
     let nft_id
@@ -223,7 +223,7 @@ app.post('/getChargerData',async function(req,res){
     //reading the files for nft_id,charger_id,
     let JSONdata = fs.readFileSync("./JSON/charger.json")
     let oldJSON = JSON.parse(JSONdata)
-    for(let i=0;i<oldJSON.Userdata.length;i++){
+    for(let i=0;i<oldJSON.ChargerData.length;i++){
         if(Username == Object.keys(oldJSON.ChargerData[i])[0]){
             for(let j=0;j<oldJSON.ChargerData[i][Username].length;j++){
                 charger_id = oldJSON.ChargerData[i][Username][j].charger_id
@@ -235,7 +235,6 @@ app.post('/getChargerData',async function(req,res){
             break
         }
     }
-
     //sending the data
     res.json({message:'Success',data:respData})
 });
@@ -248,9 +247,6 @@ app.get('/getDetails',function(req,res){
     let id = req.query.id
     let respData = []
     let JSONdata
-    console.log(name)
-    console.log(id)
-    console.log(productName)
     if(productName == 'battery'){
         JSONdata = fs.readFileSync(batteryData)
     }else{
@@ -362,5 +358,6 @@ async function goToFile(){
 
 
 setInterval(()=>{
-    goToFile()
-},1800000)
+    // goToFile()
+    Cyclecalculator.getAllBatteries()
+},120000)
